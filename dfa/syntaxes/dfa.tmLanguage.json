@@ -1,0 +1,31 @@
+{
+	"name": "dfa",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.dfa",
+				"match": "\\b(setAlphabet|setStatesAmount|setStart|makeTerminate|addEdge)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.dfa",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.dfa",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.dfa"
+}
