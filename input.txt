@@ -1,0 +1,8 @@
+setAlphabet: "0, 1"
+setStatesAmount: 2
+setStart: 0
+makeTerminate: 0
+addEdge: "0, 1, 0"
+addEdge: "0, 1, 1"
+addEdge: "1, 1, 0"
+addEdge: "1, 1, 1"
