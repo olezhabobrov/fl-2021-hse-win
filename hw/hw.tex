@@ -1,0 +1,131 @@
+\documentclass[12pt]{article}
+\usepackage[left=2cm,right=2cm,top=1cm,bottom=1cm,bindingoffset=0cm]{geometry}
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cmap}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{pifont}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{enumitem}
+
+\pagenumbering{gobble}
+
+\begin{document}
+
+\begin{center}
+{\LARGE Формальные языки}
+\end{center}
+
+\bigskip
+
+\begin{enumerate}
+\setlength\itemsep{1em}
+
+  \item Привести три самых коротких различных строки, принадлежащих языку, описанному регулярным выражением; принадлежат ли строки $abbab$ и $bababa$ данному языку?
+  \begin{enumerate}[label=\arabic*)]
+    \setlength\itemsep{0.8em}
+    \item $a ((a \mid b)^* b)^* $
+    \item $(a (a \mid b)^*)^* b $
+    \item $(a \mid b) (a (a \mid b))^* (a \mid b) $
+    \item $(a \mid b) ((a \mid b) b)^* (a \mid b) $
+    \item $(ba \mid b)^* \mid (bb \mid a)^*$
+    \item $(ab \mid b)^* \mid (bb \mid a)^*$
+    \item $(ba \mid a)^* \mid (bb \mid a)^*$
+    \item $(ba \mid a)^* \mid (bb \mid b)^*$
+    \item $(a \mid b)^* b (a \mid \varepsilon) b (a \mid b)^*$
+    \item $(a \mid b)^* a (a \mid \varepsilon) b (a \mid b)^*$
+    \item $(a \mid b)^* b (a \mid \varepsilon) a (a \mid b)^*$
+    \item $(a \mid b)^* a (a \mid \varepsilon) a (a \mid b)^*$
+    \item $(a \mid b)^* b (b \mid \varepsilon) b (a \mid b)^*$
+    \item $(a \mid b)^* a (b \mid \varepsilon) b (a \mid b)^*$
+    \item $(a \mid b)^* b (b \mid \varepsilon) a (a \mid b)^*$
+    \item $(a \mid b)^* a (b \mid \varepsilon) a (a \mid b)^*$
+  \end{enumerate}
+
+  \item Построить минимальный детерминированный конечный автомат, распознающий язык:
+  \begin{enumerate}[label=\arabic*)]
+    \setlength\itemsep{0.8em}
+    \item $\{ \omega \cdot a \cdot b \mid \omega \in \{0, 1\}^*, a \in \{0, 1\}, b \in \{0, 1\}, a \ or \ b = 1 \}$
+    \item $\{ \omega \cdot a \cdot b \mid \omega \in \{0, 1\}^*, a \in \{0, 1\}, b \in \{0, 1\}, a \ and \ b = 0 \}$
+    \item $\{ a \cdot \omega \cdot b \mid \omega \in \{0, 1\}^*, a \in \{0, 1\}, b \in \{0, 1\}, a \ or \ b = 1 \}$
+    \item $\{ a \cdot \omega \cdot b \mid \omega \in \{0, 1\}^*, a \in \{0, 1\}, b \in \{0, 1\}, a \ and \ b = 0 \}$
+    \item $\{ a \cdot b \cdot \omega \mid \omega \in \{0, 1\}^*, a \in \{0, 1\}, b \in \{0, 1\}, a \ or \ b = 1 \}$
+    \item $\{ a \cdot b \cdot \omega \mid \omega \in \{0, 1\}^*, a \in \{0, 1\}, b \in \{0, 1\}, a \ and \ b = 0 \}$
+
+
+    \item $\{ \omega \cdot a \cdot b \mid \omega \in \{0, 1\}^*, a \in \{0, 1\}, b \in \{0, 1\}, a = b \}$
+    \item $\{ \omega \cdot a \cdot b \mid \omega \in \{0, 1\}^*, a \in \{0, 1\}, b \in \{0, 1\}, a \neq b \}$
+    \item $\{ a \cdot \omega \cdot b \mid \omega \in \{0, 1\}^*, a \in \{0, 1\}, b \in \{0, 1\}, a = b \}$
+    \item $\{ a \cdot \omega \cdot b \mid \omega \in \{0, 1\}^*, a \in \{0, 1\}, b \in \{0, 1\}, a \neq b \}$
+    \item $\{ a \cdot b \cdot \omega \mid \omega \in \{0, 1\}^*, a \in \{0, 1\}, b \in \{0, 1\}, a = b \}$
+    \item $\{ a \cdot b \cdot \omega \mid \omega \in \{0, 1\}^*, a \in \{0, 1\}, b \in \{0, 1\}, a \neq b \}$
+
+  \end{enumerate}
+
+  \item Построить регулярную грамматику, задающую язык:
+  \begin{enumerate}[label=\arabic*)]
+    \setlength\itemsep{0.8em}
+
+    \item $\{ \alpha \cdot 100 \cdot \beta \mid \alpha, \beta \in \{0, 1\}^*\} \cap \{\gamma \cdot 000 \cdot \delta \mid \gamma, \delta \in \{0, 1\}^* \}$
+    \item $\{ \alpha \cdot 100 \cdot \beta \mid \alpha, \beta \in \{0, 1\}^*\} \cup \{\gamma \cdot 000 \cdot \delta \mid \gamma, \delta \in \{0, 1\}^* \}$
+    \item $\{ \alpha \cdot 001 \cdot \beta \mid \alpha, \beta \in \{0, 1\}^*\} \cap \{\gamma \cdot 000 \cdot \delta \mid \gamma, \delta \in \{0, 1\}^* \}$
+    \item $\{ \alpha \cdot 001 \cdot \beta \mid \alpha, \beta \in \{0, 1\}^*\} \cup \{\gamma \cdot 000 \cdot \delta \mid \gamma, \delta \in \{0, 1\}^* \}$
+    \item $\{ \alpha \cdot 010 \cdot \beta \mid \alpha, \beta \in \{0, 1\}^*\} \cap \{\gamma \cdot 000 \cdot \delta \mid \gamma, \delta \in \{0, 1\}^* \}$
+    \item $\{ \alpha \cdot 010 \cdot \beta \mid \alpha, \beta \in \{0, 1\}^*\} \cup \{\gamma \cdot 000 \cdot \delta \mid \gamma, \delta \in \{0, 1\}^* \}$
+    \item $\{ \alpha \cdot 001 \cdot \beta \mid \alpha, \beta \in \{0, 1\}^*\} \cap \{\gamma \cdot 100 \cdot \delta \mid \gamma, \delta \in \{0, 1\}^* \}$
+    \item $\{ \alpha \cdot 001 \cdot \beta \mid \alpha, \beta \in \{0, 1\}^*\} \cup \{\gamma \cdot 100 \cdot \delta \mid \gamma, \delta \in \{0, 1\}^* \}$
+    \item $\{ \alpha \cdot 101 \cdot \beta \mid \alpha, \beta \in \{0, 1\}^*\} \cap \{\gamma \cdot 010 \cdot \delta \mid \gamma, \delta \in \{0, 1\}^* \}$
+    \item $\{ \alpha \cdot 101 \cdot \beta \mid \alpha, \beta \in \{0, 1\}^*\} \cup \{\gamma \cdot 010 \cdot \delta \mid \gamma, \delta \in \{0, 1\}^* \}$
+
+    \item $\{ \alpha \cdot 011 \cdot \beta \mid \alpha, \beta \in \{0, 1\}^*\} \cap \{\gamma \cdot 111 \cdot \delta \mid \gamma, \delta \in \{0, 1\}^* \}$
+    \item $\{ \alpha \cdot 011 \cdot \beta \mid \alpha, \beta \in \{0, 1\}^*\} \cup \{\gamma \cdot 111 \cdot \delta \mid \gamma, \delta \in \{0, 1\}^* \}$
+    \item $\{ \alpha \cdot 110 \cdot \beta \mid \alpha, \beta \in \{0, 1\}^*\} \cap \{\gamma \cdot 111 \cdot \delta \mid \gamma, \delta \in \{0, 1\}^* \}$
+    \item $\{ \alpha \cdot 110 \cdot \beta \mid \alpha, \beta \in \{0, 1\}^*\} \cup \{\gamma \cdot 111 \cdot \delta \mid \gamma, \delta \in \{0, 1\}^* \}$
+    \item $\{ \alpha \cdot 101 \cdot \beta \mid \alpha, \beta \in \{0, 1\}^*\} \cap \{\gamma \cdot 111 \cdot \delta \mid \gamma, \delta \in \{0, 1\}^* \}$
+    \item $\{ \alpha \cdot 101 \cdot \beta \mid \alpha, \beta \in \{0, 1\}^*\} \cup \{\gamma \cdot 111 \cdot \delta \mid \gamma, \delta \in \{0, 1\}^* \}$
+    \item $\{ \alpha \cdot 110 \cdot \beta \mid \alpha, \beta \in \{0, 1\}^*\} \cap \{\gamma \cdot 011 \cdot \delta \mid \gamma, \delta \in \{0, 1\}^* \}$
+    \item $\{ \alpha \cdot 110 \cdot \beta \mid \alpha, \beta \in \{0, 1\}^*\} \cup \{\gamma \cdot 011 \cdot \delta \mid \gamma, \delta \in \{0, 1\}^* \}$
+    \item $\{ \alpha \cdot 010 \cdot \beta \mid \alpha, \beta \in \{0, 1\}^*\} \cap \{\gamma \cdot 101 \cdot \delta \mid \gamma, \delta \in \{0, 1\}^* \}$
+    \item $\{ \alpha \cdot 010 \cdot \beta \mid \alpha, \beta \in \{0, 1\}^*\} \cup \{\gamma \cdot 101 \cdot \delta \mid \gamma, \delta \in \{0, 1\}^* \}$
+  \end{enumerate}
+
+  \item Проверить регулярность языка (если регулярный, построить автомат, регулярное выражение или регулярную грамматику, иначе --- доказать нерегулярность)
+  \begin{enumerate}[label=\arabic*)]
+    \setlength\itemsep{0.8em}
+
+    \item $\{\omega \in \{a, b\}^* \mid |\omega|_a = |\omega|_b\}$
+    \item $\{\omega \in \{a, b\}^* \mid |\omega|_a \geq |\omega|_b\}$
+    \item $\{\omega \in \{a, b\}^* \mid |\omega|_a \leq |\omega|_b\}$
+    \item $\{\omega \in \{a, b\}^* \mid |\omega|_a \neq |\omega|_b\}$
+    \item $\{\alpha \cdot a \cdot \beta \mid \alpha, \beta \in \{a, b\}^*, |\alpha|_b \geq |\beta|_a \}$
+    \item $\{\alpha \cdot a \cdot \beta \mid \alpha, \beta \in \{a, b\}^*, |\alpha|_b > |\beta|_a \}$
+    \item $\{a^m \cdot \omega \mid 1 \leq |\omega|_b \leq m\}$
+    \item $\{\omega \cdot a^m  \mid 1 \leq |\omega|_b \leq m\}$
+  \end{enumerate}
+
+  \item По регулярному выражению построить недетерминированный конечный автомат без эпсилон-переходов
+  \begin{enumerate}[label=\arabic*)]
+    \setlength\itemsep{0.8em}
+
+    \item $a ((a \mid b)^* b)^* $
+    \item $(a (a \mid b)^*)^* b $
+    \item $(a \mid b) (a (a \mid b))^* (a \mid b) $
+    \item $(a \mid b) ((a \mid b) b)^* (a \mid b) $
+    \item $(ba \mid b)^* \mid (bb \mid a)^*$
+    \item $(ab \mid b)^* \mid (bb \mid a)^*$
+    \item $(ba \mid a)^* \mid (bb \mid a)^*$
+    \item $(ba \mid a)^* \mid (bb \mid b)^*$
+    \item $(a \mid b)^* b (a \mid \varepsilon) b (a \mid b)^*$
+    \item $(a \mid b)^* a (a \mid \varepsilon) b (a \mid b)^*$
+    \item $(a \mid b)^* b (a \mid \varepsilon) a (a \mid b)^*$
+    \item $(a \mid b)^* a (a \mid \varepsilon) a (a \mid b)^*$
+    \item $(a \mid b)^* b (b \mid \varepsilon) b (a \mid b)^*$
+    \item $(a \mid b)^* a (b \mid \varepsilon) b (a \mid b)^*$
+    \item $(a \mid b)^* b (b \mid \varepsilon) a (a \mid b)^*$
+    \item $(a \mid b)^* a (b \mid \varepsilon) a (a \mid b)^*$
+  \end{enumerate}
+\end{enumerate}
+
+\end{document}
