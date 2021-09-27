@@ -19,3 +19,7 @@
 Его можно минимизировать до:
 
 ![](https://github.com/olezhabobrov/fl-2021-hse-win/blob/HW03/2.png)
+
+# 3
+
+![](https://github.com/olezhabobrov/fl-2021-hse-win/blob/HW03/3.JPG)
