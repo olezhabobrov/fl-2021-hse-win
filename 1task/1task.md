@@ -4,5 +4,5 @@
 
 Несложно заметить, что его можно минимизировать и получить:
 
-![](https://github.com/olezhabobrov/fl-2021-hse-win/blob/HW02/1task/2.png?raw=true1.png)
+![](https://github.com/olezhabobrov/fl-2021-hse-win/blob/HW02/1task/12.png?raw=true1.png)
 
