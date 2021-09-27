@@ -14,4 +14,8 @@
 
 Полученный автомат:
 
+![](https://github.com/olezhabobrov/fl-2021-hse-win/blob/HW03/1.png)
 
+Его можно минимизировать до:
+
+![](https://github.com/olezhabobrov/fl-2021-hse-win/blob/HW03/2.png)
