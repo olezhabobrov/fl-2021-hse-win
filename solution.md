@@ -24,6 +24,10 @@
 
 ![](https://github.com/olezhabobrov/fl-2021-hse-win/blob/HW03/3.JPG)
 
+# 4
+
+![](https://github.com/olezhabobrov/fl-2021-hse-win/blob/HW03/4.JPG)
+
 # 5
 
 ![](https://github.com/olezhabobrov/fl-2021-hse-win/blob/HW03/5.png)
