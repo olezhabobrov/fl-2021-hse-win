@@ -10,26 +10,28 @@ reserved = {
 }
 
 tokens = [
+  'NUM',
   'SYMB',
   'COLON',
-  'STR',
-  'COMMA',
   'WRONG_ID'
 ] + list(reserved.values())
 
 t_COLON = r':'
-t_STR = r'"'
-t_COMMA = r','
+
+symbols=[]
 
 def t_WRONG_ID(t):
   r'[a-z_][a-z_A-Z0-9]*'
   t.type = reserved.get(t.value, 'WRONG_ID')
   return t
 
-
-def t_SYMB(t):
+def t_NUM(t):
   r'[0-9]+'
   t.value = int(t.value)
+  return t
+
+def t_SYMB(t):
+  r'".*"'
   return t
 
 t_ignore = ' \t'
