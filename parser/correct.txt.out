@@ -1,0 +1,15 @@
+Alphabet is:
+0, 1
+===============================
+States are:
+q0, q1
+Initial state is q0
+===============================
+Edges:
+from q0 :
+to q1 with 0
+to q1 with 1
+q0 is terminate
+from q1 :
+to q1 with 0
+to q1 with 1
