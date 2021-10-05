@@ -67,8 +67,37 @@ edges: (1; 2; "0", "1"), (2; 2; "0", "1")
 
 В целом я считаю, что язык достаточно удобным, но очень сильно не хватило его описания, пришлось разбираться с ним, основываясь на примерах (да и то в HW01 они некорректны)
 
+**Синтаксический анализатор**
 
+В целом очень хорошие и понятные ошибки выдает, например:
 
+* Автомат не детерминированный автомат: [ввод](https://github.com/olezhabobrov/fl-2021-hse-win/blob/HW04/Fedotova/input.txt), [вывод](https://github.com/olezhabobrov/fl-2021-hse-win/blob/HW04/Fedotova/input.txt.out)
+* В автомате перепутано состояние: [ввод](https://github.com/olezhabobrov/fl-2021-hse-win/blob/HW04/Fedotova/wrong_state.txt), [вывод](https://github.com/olezhabobrov/fl-2021-hse-win/blob/HW04/Fedotova/wrong_state.txt.out)
+* Автомат неполный [ввод](https://github.com/olezhabobrov/fl-2021-hse-win/blob/HW04/Fedotova/missed_edge.txt), [вывод](https://github.com/olezhabobrov/fl-2021-hse-win/blob/HW04/Fedotova/missed_edge.txt.out)
+
+Однако есть и некоторые ошибки, которые анализатор не распознает:
+
+* Количество символов в алфавите может быть абсолютно любым, оно как-то ни на что не влияет: [ввод](https://github.com/olezhabobrov/fl-2021-hse-win/blob/HW04/Fedotova/incorrect_number.txt), [вывод](https://github.com/olezhabobrov/fl-2021-hse-win/blob/HW04/Fedotova/incorrect_number.txt.out)
+* Количество одинаковых символов, по которому можно перейти в другое состояние, может быть в принципе любое: [ввод](https://github.com/olezhabobrov/fl-2021-hse-win/blob/HW04/Fedotova/several_edges.txt), [вывод](https://github.com/olezhabobrov/fl-2021-hse-win/blob/HW04/Fedotova/several_edges.txt.out)
+
+Я не считаю данные неточности существенными, так что лично от меня жирный **LIKE** данному анализатору. Особенно понравилось, что, если ДКА неполный, то выводится ребро, которого не хватает
+
+### Бондаренко
+
+Описание автомата на данном языке:
+
+Автомат, принимающий только пустое слово:
+
+```
+Alf: {0,1}
+Start: 0
+Vertices: 0(), 1(T)
+Edges: (0, 1){0, 1}, (1,1){0,1}
+```
+
+Мне нравится этот язык, особенно, что при перечислении состояний можно сразу же указать, терминальная она или нет
+
+К сожалению, парсер еще не доделан. Мне кажется такой язык действительно сложно парсить, так что понимаю...
 
 
 ## 2
