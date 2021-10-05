@@ -1,0 +1,12 @@
+Alphabet -- 2 symbol(s):
+             (0, 1)
+Start state:
+             1
+Terminals -- 2 state(s):
+             1, 2
+All states:
+           (number: 1, type: start)
+           (number: 2, type: terminal)
+Edges:
+            1 --> 2, symbols: (0, 0, 0, 0, 1)
+            2 --> 2, symbols: (0, 1)
