@@ -29,6 +29,12 @@ Lang = 'a'* + ('b' | ('b' + 'a'))*
 ## Грамматика
 
 ```
+Program : Rule
 Rule : ID = EXPR
-
+EXPR : SYMB
+     | EXPR PLUS EXPR
+     | LBRACKET EXPR RBRACKET
+     | EXPR MULT
+     | LSQ EXPR RSQ
+     | EXPR ALT EXPR
 ```
