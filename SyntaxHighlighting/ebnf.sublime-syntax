@@ -1,0 +1,48 @@
+%YAML 1.2
+
+file_extensions:
+  - txt
+scope: source.ebnf
+contexts:
+  main:
+    # Strings begin and end with quotes, and use backslashes as an escape
+    # character
+    - match: ''''
+      scope: punctuation.definition.string.begin
+      push: quoted_string
+
+    # Comments begin with a '%' and finish at the end of the line
+    - match: '%'
+      scope: punctuation.definition.comment
+      push: line_comment
+
+    - match: '\*|\||START'
+      scope: keyword.control
+
+    # Not-terminals
+    - match: '\b[a-zA-Z][a-zA-Z0-9]*\b'
+      scope: constant.numeric
+
+    - match: \(
+      push: brackets
+    - match: \)
+      scope: invalid.illegal.stray-bracket-end
+
+  quoted_string:
+    - meta_scope: string.quoted
+    - match: '\\.'
+      scope: constant.character.escape
+    - match: ''''
+      scope: punctuation.definition.string.end
+      pop: true
+
+  line_comment:
+    - meta_scope: comment.line
+    - match: $
+      pop: true
+
+  brackets:
+    - match: \)
+      pop: true
+    - include: main
+   
