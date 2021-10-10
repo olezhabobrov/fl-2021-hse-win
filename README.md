@@ -40,9 +40,9 @@ Program : Rule
 Rule : ID = EXPR
 EXPR : SYMB
      | ID
-     | EXPR ALT EXPR
-     | EXPR MULT
-     | EXPR PLUS EXPR
      | LBRACKET EXPR RBRACKET
+     | EXPR MULT
      | LSQ EXPR RSQ
+     | EXPR PLUS EXPR
+     | EXPR ALT EXPR
 ```
