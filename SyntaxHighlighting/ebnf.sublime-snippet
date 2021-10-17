@@ -1,0 +1,6 @@
+<snippet>
+    <scope>source.ebnf</scope>
+    <tabTrigger>START</tabTrigger>
+    <content><![CDATA[START = ]]></content>
+    <description>Starting state</description>
+</snippet>
